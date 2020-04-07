@@ -16,7 +16,7 @@ LABEL about.tags="Structural variations"
 MAINTAINER SASC <sasc@lumc.nl>
 
 ################## INSTALLATION ######################
-RUN sed -i -E "s/samtools_view = subprocess.Popen\(\[exe_dict\['samtools'\], 'view', '-h', bam_filename\] \+ regions, stdout\=subprocess\.PIPE\)/samtools_view = subprocess.Popen\(\[exe_dict\['samtools'\], 'view', '-h', bam_filename, '-L', regions_filename\], stdout\=subprocess\.PIPE\)/g" ./local/bin/mateclever
+RUN sed -i -E "s/samtools_view = subprocess.Popen\(\[exe_dict\['samtools'\], 'view', '-h', bam_filename\] \+ regions, stdout\=subprocess\.PIPE\)/samtools_view = subprocess.Popen\(\[exe_dict\['samtools'\], 'view', '-h', bam_filename, '-L', regions_filename\], stdout\=subprocess\.PIPE\)/g" ./usr/local/bin/mateclever
 
 ################## TOOL INFO ##################
 # Clever-toolkit (mateclever) fails to run samtools due to limited argument size.
